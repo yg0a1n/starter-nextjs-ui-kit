@@ -1,4 +1,4 @@
-# Next.js Starter UI kit
+# Next.js Production Starter
 
 ## 🚀 What's Included
 
@@ -77,8 +77,8 @@ and each `ignore` rule in `.github/dependabot.yml` states the condition for remo
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yg0a1n/starter-nextjs-ui-kit.git
-    cd starter-nextjs-ui-kit
+    git clone https://github.com/yg0a1n/nextjs-production-starter.git
+    cd nextjs-production-starter
     ```
 
 2. **Create your environment file** — no environment file is versioned in this repository:
@@ -126,13 +126,13 @@ To use Docker, make sure Docker is installed on your machine. Then, build and ru
 ```bash
 export $(grep -v '^#' .env | xargs)
 
-docker build --progress=plain $(grep -v '^#' .env | xargs -I{} echo --build-arg {}) -t starter-nextjs-ui-kit -f Dockerfile .
+docker build --progress=plain $(grep -v '^#' .env | xargs -I{} echo --build-arg {}) -t nextjs-production-starter -f Dockerfile .
 
 # or if using Bun
 
-docker build $(grep -v '^#' .env | xargs -I{} echo --build-arg {}) -t starter-nextjs-ui-kit -f Dockerfile.bun .
+docker build $(grep -v '^#' .env | xargs -I{} echo --build-arg {}) -t nextjs-production-starter -f Dockerfile.bun .
 
-docker run -p 3000:3000 starter-nextjs-ui-kit
+docker run -p 3000:3000 nextjs-production-starter
 ```
 
 ###  Docker Cleanup
@@ -142,7 +142,7 @@ If you need to remove the Docker container and image, you can use the following 
 First, find the container ID:
 
 ```bash
-docker ps -a --filter "ancestor=starter-nextjs-ui-kit"
+docker ps -a --filter "ancestor=nextjs-production-starter"
 ```
 
 Then, stop and remove the container using its ID:
@@ -154,7 +154,7 @@ docker rm <container_id>
 Finally, remove the Docker image:
 
 ```bash
-docker rmi starter-nextjs-ui-kit
+docker rmi nextjs-production-starter
 ```
 
 ### 🚀 CI/CD
@@ -222,7 +222,7 @@ Once everything is set, choose your cloud host. For Fly.io, follow the steps bel
    ```
 2. **Create the app** (if it already exists, Fly.io will show a non-blocking error):
    ```bash
-   fly apps create starter-nextjs-ui-kit
+   fly apps create nextjs-production-starter
    ```
 3. **List all apps to verify presence:**
    ```bash

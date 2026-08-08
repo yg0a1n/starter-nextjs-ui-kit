@@ -74,4 +74,4 @@ jobs:
       #   env:
       #     FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
       #   run: |
-      #     flyctl deploy --image ${{ env.IMAGE }}:latest --app starter-nextjs-ui-kit
+      #     flyctl deploy --image ${{ env.IMAGE }}:latest --app nextjs-production-starter

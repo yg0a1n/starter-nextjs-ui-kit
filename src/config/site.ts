@@ -15,8 +15,8 @@ import { SiteConfig } from '@/types/site-config';
 
 export const BASE_URL = env.NEXT_PUBLIC_APP_URL || DEFAULT_BASE_URL;
 
-const SITE_NAME = 'Next.js UI kit';
-const TAG_LINE = 'Multilingual Next.js UI kit';
+const SITE_NAME = 'Next.js Production Starter';
+const TAG_LINE = 'Multilingual Next.js production starter';
 const TITLE = 'Next.js Boilerplate';
 const DESCRIPTION_SITE =
   'A multilingual Next.js starter with built-in i18n support. Launch your global-ready web application with a clean, efficient, and SEO-friendly foundation.';
