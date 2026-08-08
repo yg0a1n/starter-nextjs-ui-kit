@@ -1,0 +1,56 @@
+# See https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+# Version control
+.git
+.gitignore
+
+# Dependencies
+node_modules
+.pnpm-store
+.npm
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Development
+.vscode
+.idea
+*.md
+.editorconfig
+
+# Tests
+__tests__
+coverage
+*.test.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+.dockerignore
+
+# Next.js build outputs
+next-env.d.ts
+
+# Optional, Next.js default files
+*.pem
+*.tsbuildinfo
+.env.local
+.env.sample
+
+# Editor
+.DS_Store

@@ -1,0 +1,62 @@
+# Deploiement Fly.io a partir de l'image publiee sur ghcr.io par
+# .github/workflows/docker-publish.yml
+#
+# Le package est public : aucun credential de registre n'est necessaire.
+#
+#   fly apps create starter-nextjs-ui-kit --org personal
+#   fly deploy --image ghcr.io/yg0a1n/starter-nextjs-ui-kit:latest
+#
+# https://fly.io/docs/reference/configuration/
+
+app = 'yg0a1n-starter-nextjs-ui-kit'
+primary_region = 'cdg'
+
+# Next.js s'arrete proprement sur SIGTERM. Avec SIGINT, les connexions en cours
+# etaient coupees a chaque deploiement.
+kill_signal = 'SIGTERM'
+kill_timeout = '30s'
+
+[experimental]
+  auto_rollback = true
+
+[build]
+  image = 'ghcr.io/yg0a1n/starter-nextjs-ui-kit:latest'
+
+[env]
+  NODE_ENV = 'production'
+  PORT = '3000'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+
+  # Sans arret automatique, la machine tourne et facture 24/7 meme sans un seul
+  # visiteur. Fly la stoppe faute de trafic et la redemarre a la premiere
+  # requete : pour une vitrine, le cout tend vers zero. Le prix est un demarrage
+  # a froid de quelques centaines de millisecondes sur la premiere visite.
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+  # Une app Next en standalone repond en quelques millisecondes : le plafond
+  # utile se compte en requetes, pas en connexions ouvertes.
+  [http_service.concurrency]
+    type = 'requests'
+    soft_limit = 200
+    hard_limit = 250
+
+  # Un tcp_check ne verifie que l'ouverture du port : un serveur repondant 500
+  # sur toutes les routes resterait « sain ». Le check HTTP interroge une vraie
+  # page — `/` redirige vers la locale par defaut, d'ou l'acceptation des 3xx.
+  [[http_service.checks]]
+    method = 'GET'
+    path = '/'
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+
+# Dimensionnement d'une vitrine : servir des pages pre-rendues ne demande ni
+# deux vCPU ni un gigaoctet. A relever si l'application prend de la charge.
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '512mb'

@@ -1,0 +1,147 @@
+{
+  "Error": {
+    "title": "Quelque chose s'est mal passé !",
+    "description": "Nous avons malheureusement rencontré une erreur. Vous pouvez essayer de recharger la page que vous visitiez.",
+    "content": "Réessayer autrement!",
+    "content-link": "Acceuil"
+  },
+  "NotFoundPage": {
+    "title": "Page non trouvée",
+    "description": "Veuillez vérifier la barre d'adresse de votre navigateur ou utiliser la navigation pour accéder à une page connue.",
+    "content": "Réessayer autrement!",
+    "content-link": "Acceuil"
+  },
+  "LanguageDetection": {
+    "title": "Langue détectée",
+    "countdown": "Changement automatique dans {countdown} secondes",
+    "description": "Nous avons détecté une langue différente. Voulez-vous changer ?"
+  },
+  "LocalLayout": {
+    "title": "Développeur Freelance | FlexiWeb Evo",
+    "description": "Une version de démarrage multilingue Next.js 15 avec prise en charge i18n intégrée. Lancez votre application web mondiale avec une base claire, efficace et optimisée pour le référencement."
+  },
+  "Header": {
+    "sidebar-links": {
+      "home": "Accueil"
+    }
+  },
+  "Footer": {
+    "social-links": "Liens sociaux",
+    "copyright": "© {year} {company}. Tous droits réservés.",
+    "sitemap": "Plan du site",
+    "page-1": "À propos",
+    "page-2": "Politique de confidentialité",
+    "page-3": "Conditions de service"
+  },
+  "Consent": {
+    "cookie-banner": {
+      "description-1": "Nous utilisons des cookies de mesure d'audience. Ils ne sont déposés qu'avec votre accord.",
+      "description-2-1": "Vous pouvez modifier vos choix à tout moment. Voir notre ",
+      "description-2-2": "politique de confidentialité",
+      "description-2-3": ", y compris votre droit d'opposition.",
+      "accept": "Tout accepter",
+      "reject": "Tout refuser",
+      "learn-more": "En savoir plus",
+      "close": "Fermer"
+    }
+  },
+  "HomePage": {
+    "title": "Créer des interfaces Web avec Next.js",
+    "description": "Bénéficiez d'une conception Web transparente avec nos solutions expertes Next.js, conçues pour la précision et l'excellence.",
+    "button": "Découvrir mes services"
+  },
+  "PrivacyPolicy": {
+    "updated": "> Mis à jour le 19/06/2025",
+    "title": "Politique de confidentialité",
+    "intro": "Cette politique de confidentialité décrit comment nous collectons et utilisons vos informations.",
+    "collect": {
+      "title": "Informations que nous collectons",
+      "intro": "Nous collectons les informations que vous nous fournissez directement :",
+      "account": "Informations de compte",
+      "usage": "Données d'utilisation",
+      "communication": "Préférences de communication"
+    },
+    "cookie-policy": {
+      "title": "Politique en matière de cookies",
+      "intro": "Les cookies éventuellement utilisés proviennent d’applications tierces et sont soumis à leur propre politique, accessible lors de l’utilisation de ces services.",
+      "button": "Changer mon consentement"
+    },
+    "use": {
+      "title": "Comment nous utilisons vos informations",
+      "intro": "Nous utilisons les informations collectées pour :",
+      "services": "Fournir nos services",
+      "experience": "Améliorer l'expérience utilisateur",
+      "updates": "Envoyer des mises à jour importantes"
+    },
+    "security": {
+      "title": "Sécurité des données",
+      "intro": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données."
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Pour toute question relative à la confidentialité, n'hésitez pas à me contacter :"
+    },
+    "updates": {
+      "title": "Mises à jour de cette politique",
+      "intro": "Nous pouvons mettre à jour cette politique de temps à autre. Veuillez la consulter régulièrement."
+    }
+  },
+  "TermsOfService": {
+    "updated": "> Mis à jour le 19/06/2025",
+    "title": "Conditions d'utilisation",
+    "intro": "Bienvenue sur notre service. En utilisant notre site, vous acceptez ces conditions.",
+    "acceptance": {
+      "title": "1. Acceptation des conditions",
+      "intro": "En accédant et en utilisant ce site, vous acceptez d'être lié par les présentes conditions générales."
+    },
+    "responsibilities": {
+      "title": "2. Responsabilités de l'utilisateur",
+      "intro": "Vous vous engagez à :",
+      "accurate": "Fournir des informations exactes",
+      "security": "Assurer la sécurité de votre compte",
+      "laws": "Respecter toutes les lois applicables"
+    },
+    "changes": {
+      "title": "3. Modifications du service",
+      "intro": "Nous nous réservons le droit de :",
+      "modify": "Modifier ou interrompre les services",
+      "update": "Mettre à jour ces conditions à tout moment"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "intro": "Si vous avez des questions concernant ces conditions, n'hésitez pas à  nous contacter :"
+    }
+  },
+  "AboutPage": {
+    "title": "À propos",
+    "description": "Ce que contient ce kit de démarrage Next.js, les décisions qu'il prend pour vous, et ce qu'il laisse volontairement de côté.",
+    "lead": "Un point de départ Next.js prêt pour la production : multilingue, thème clair et sombre, composants shadcn/ui, conteneurisation et déploiement continu déjà câblés. Vous clonez, vous changez un fichier de configuration, vous livrez.",
+    "stackTitle": "Qu'est-ce que vous obtenez ?",
+    "stackIntro": "Les versions ci-dessous sont lues dans le package.json du projet à chaque build : elles restent justes après une montée de version, y compris chez vous après un clonage.",
+    "stackColBrick": "Brique",
+    "stackColVersion": "Version",
+    "packageManagerLabel": "Gestionnaire de paquets",
+    "decisionsTitle": "Quelles décisions sont déjà prises ?",
+    "decisionsIntro": "Un kit de démarrage est une somme de décisions. Les taire obligerait chaque projet à les redécouvrir — et à se demander si elles sont délibérées.",
+    "decisionI18nTitle": "Le multilingue dès le départ",
+    "decisionI18nBody": "Ajouter l'internationalisation à un projet existant impose de reprendre chaque route et chaque chaîne de caractères. Elle est ici posée d'emblée : français et anglais, une langue par défaut, et le routage qui va avec.",
+    "decisionDockerTitle": "Deux images Docker, Node et Bun",
+    "decisionDockerBody": "Vous choisissez votre exécution sans réécrire le déploiement. Le workflow d'intégration continue construit l'image et la publie.",
+    "decisionShadcnTitle": "shadcn/ui plutôt qu'une bibliothèque de composants",
+    "decisionShadcnBody": "Le code des composants vous appartient : vous l'éditez directement, au lieu de contourner les choix d'un tiers à coups de surcharges.",
+    "decisionPnpmTitle": "pnpm, et un verrou qui fait foi",
+    "decisionPnpmBody": "Le fichier de verrouillage détermine les versions installées, et les scripts de build des dépendances sont approuvés explicitement plutôt qu'exécutés par défaut.",
+    "excludedTitle": "Qu'est-ce qui n'est pas inclus ?",
+    "excludedBody": "Le kit ne fournit ni authentification, ni base de données, ni paiement, ni supervision d'erreurs. Ce sont des choix d'architecture qui vous appartiennent, et les imposer ici reviendrait à vous faire porter des dépendances que vous n'avez pas choisies. Le kit s'arrête là où commencent vos décisions.",
+    "excludedDetectedLabel": "Détecté dans ce projet",
+    "excludedDetectedNone": "Aucune de ces briques n'a été détectée dans les dépendances.",
+    "excludedCaveat": "Cette détection s'appuie sur une liste de paquets courants : elle ne peut pas être exhaustive. Un projet bâti sur un outil que la liste ignore n'y apparaîtrait pas. En cas de doute, le package.json fait foi.",
+    "demoTitle": "Cette page est une démonstration",
+    "demoBody": "Changez la langue ou le thème dans l'en-tête : ce que vous voyez est ce que le kit fournit, sans réglage supplémentaire. La page que vous lisez utilise le même système d'internationalisation et le même thème que celui que vous obtiendrez.",
+    "startTitle": "Par où commencer ?",
+    "startBody": "Deux commandes suffisent pour lancer le projet en local.",
+    "startConfigTitle": "Où personnaliser",
+    "startConfigBody": "Le nom du site, les adresses, les liens sociaux et les métadonnées vivent dans un seul fichier : src/config/app.ts. C'est le seul endroit à modifier pour faire de ce gabarit le vôtre.",
+    "repoLink": "Voir le code source"
+  }
+}

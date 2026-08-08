@@ -1,0 +1,65 @@
+name: quality
+
+# Verification de chaque PR et de main : lint, typecheck, build.
+#
+# SECURITE — le declencheur est `pull_request`, JAMAIS `pull_request_target`.
+# `pull_request_target` s'executerait avec le contexte du depot de base (secrets
+# + token en ecriture) ; combine a un checkout du code de la PR, n'importe qui
+# ouvrant une PR sur ce depot public ferait tourner son code avec ces droits.
+# Avec `pull_request`, les PRs de forks tournent sans secrets et en lecture seule.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Moindre privilege : ce workflow ne fait que lire le code.
+permissions:
+  contents: read
+
+# Un push de plus sur une PR annule le run precedent (economise le runner).
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # Le build valide les variables via @t3-oss/env-nextjs (src/env.ts). En local
+    # elles viennent du .env, absent du runner. Valeurs factices ici : ce sont des
+    # NEXT_PUBLIC_*, donc publiques par nature — aucun secret n'a sa place ici.
+    env:
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ''
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        # La version vient du champ `packageManager` de package.json.
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # .nvmrc fait foi, et il est aligne sur la version Node de Vercel (22.x).
+          # A ne pas confondre avec le Dockerfile, sur une autre version.
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build

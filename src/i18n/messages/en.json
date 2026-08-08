@@ -1,0 +1,147 @@
+{
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "We unfortunately ran into an error. You can try to reload the page you were visiting.",
+    "content": "Try again differently!",
+    "content-link": "Home"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please check the URL in the address bar or use the navigation to go to a known page.",
+    "content": "Try again differently!",
+    "content-link": "Home"
+  },
+  "LanguageDetection": {
+    "title": "Language detected",
+    "countdown": "Auto switch in {countdown} seconds",
+    "description": "We detected a different language. Do you want to switch?"
+  },
+  "LocalLayout": {
+    "title": "Freelance Developer | FlexiWeb Evo",
+    "description": "Construction template empty boiler"
+  },
+  "Header": {
+    "sidebar-links": {
+      "home": "Home"
+    }
+  },
+  "Footer": {
+    "social-links": "Social links",
+    "copyright": "© {year} {company}. All rights reserved.",
+    "sitemap": "Sitemap",
+    "page-1": "About",
+    "page-2": "Privacy Policy",
+    "page-3": "Terms of service"
+  },
+  "Consent": {
+    "cookie-banner": {
+      "description-1": "We use audience measurement cookies. They are only stored with your consent.",
+      "description-2-1": "You can change your choices at any time. See our ",
+      "description-2-2": "privacy policy",
+      "description-2-3": ", including your right to object.",
+      "accept": "Accept all",
+      "reject": "Refuse all",
+      "learn-more": "Learn more",
+      "close": "Close"
+    }
+  },
+  "HomePage": {
+    "title": "Creating web interfaces with Next.js",
+    "description": "Unlock seamless web design with our expert Next.js solutions—crafted for precision and excellence.",
+    "button": "Discover my services"
+  },
+  "PrivacyPolicy": {
+    "updated": "> Updated on 2025-06-19",
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy describes how we collect and use your information.",
+    "collect": {
+      "title": "Information We Collect",
+      "intro": "We collect information that you provide directly to us:",
+      "account": "Account information",
+      "usage": "Usage data",
+      "communication": "Communication preferences"
+    },
+    "cookie-policy": {
+      "title": "Cookie Policy",
+      "intro": "Any cookies that may be used come from third-party applications and are subject to their own policies, which can be accessed when using these services.",
+      "button": "Change my consent"
+    },
+    "use": {
+      "title": "How We Use Your Information",
+      "intro": "We use the information we collect to:",
+      "services": "Provide our services",
+      "experience": "Improve user experience",
+      "updates": "Send important updates"
+    },
+    "security": {
+      "title": "Data Security",
+      "intro": "We implement appropriate security measures to protect your data."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "intro": "For any questions regarding privacy, please do not hesitate to contact me:"
+    },
+    "updates": {
+      "title": "Updates to This Policy",
+      "intro": "We may update this policy from time to time. Please review it periodically."
+    }
+  },
+  "TermsOfService": {
+    "updated": "> Updated on 2025-06-19",
+    "title": "Terms of Service",
+    "intro": "Welcome to our service. By using our website, you agree to these terms.",
+    "acceptance": {
+      "title": "1. Acceptance of Terms",
+      "intro": "By accessing and using this website, you accept and agree to be bound by the terms and conditions of this agreement."
+    },
+    "responsibilities": {
+      "title": "2. User Responsibilities",
+      "intro": "You agree to:",
+      "accurate": "Provide accurate information",
+      "security": "Maintain the security of your account",
+      "laws": "Comply with all applicable laws"
+    },
+    "changes": {
+      "title": "3. Service Changes",
+      "intro": "We reserve the right to:",
+      "modify": "Modify or discontinue services",
+      "update": "Update these terms at any time"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "intro": "If you have any questions regarding these terms, please do not hesitate to contact us:"
+    }
+  },
+  "AboutPage": {
+    "title": "About",
+    "description": "What this Next.js starter kit contains, the decisions it makes for you, and what it deliberately leaves out.",
+    "lead": "A production-ready Next.js starting point: multilingual, light and dark themes, shadcn/ui components, containerization and continuous deployment already wired. Clone it, change one config file, ship.",
+    "stackTitle": "What do you get?",
+    "stackIntro": "The versions below are read from the project's package.json at build time, so they stay accurate after an upgrade — including in your own copy after cloning.",
+    "stackColBrick": "Package",
+    "stackColVersion": "Version",
+    "packageManagerLabel": "Package manager",
+    "decisionsTitle": "Which decisions are already made?",
+    "decisionsIntro": "A starter kit is a set of decisions. Leaving them unsaid forces every project to rediscover them — and to wonder whether they were deliberate.",
+    "decisionI18nTitle": "Multilingual from the start",
+    "decisionI18nBody": "Adding internationalization to an existing project means revisiting every route and every string. Here it is in place from the outset: French and English, a default language, and the routing that goes with it.",
+    "decisionDockerTitle": "Two Docker images, Node and Bun",
+    "decisionDockerBody": "Pick your runtime without rewriting the deployment. The continuous integration workflow builds the image and publishes it.",
+    "decisionShadcnTitle": "shadcn/ui rather than a component library",
+    "decisionShadcnBody": "The component code is yours: you edit it directly, instead of working around someone else's choices with overrides.",
+    "decisionPnpmTitle": "pnpm, with a lockfile that rules",
+    "decisionPnpmBody": "The lockfile determines which versions get installed, and dependency build scripts are approved explicitly rather than run by default.",
+    "excludedTitle": "What is not included?",
+    "excludedBody": "The kit ships no authentication, no database, no payments and no error monitoring. Those are architectural choices that belong to you, and bundling them here would hand you dependencies you never picked. The kit stops where your decisions begin.",
+    "excludedDetectedLabel": "Detected in this project",
+    "excludedDetectedNone": "None of those layers were detected in the dependencies.",
+    "excludedCaveat": "This check matches a curated list of common packages and cannot be exhaustive. A project built on a tool the list does not know about would not show up here. When in doubt, the package.json is what counts.",
+    "demoTitle": "This page is a demonstration",
+    "demoBody": "Switch the language or the theme in the header: what you see is what the kit ships, with no extra setup. The page you are reading uses the very same internationalization and theming you will get.",
+    "startTitle": "Where do you start?",
+    "startBody": "Two commands are enough to run the project locally.",
+    "startConfigTitle": "Where to customize",
+    "startConfigBody": "The site name, addresses, social links and metadata live in a single file: src/config/app.ts. That is the only place to edit to make this template your own.",
+    "repoLink": "View the source code"
+  }
+}

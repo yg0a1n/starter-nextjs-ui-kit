@@ -1,0 +1,24 @@
+# pnpm v11 : la clé `onlyBuiltDependencies` (v10) a été SUPPRIMÉE et remplacée par
+# `allowBuilds` (map paquet -> bool). En 11.20 l'ancienne clé était silencieusement ignorée,
+# d'où ERR_PNPM_IGNORED_BUILDS : les postinstall natifs (sharp, @swc/core, @tailwindcss/oxide…)
+# étaient sautés chez tout utilisateur qui clone ce starter. On autorise explicitement les builds.
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  '@tailwindcss/oxide': true
+  msw: true
+  sharp: true
+  unrs-resolver: true
+
+# Correctifs de securite sur des dependances TRANSITIVES (Dependabot ne peut pas
+# les traiter : il ne modifie que ce que package.json declare). Tous sont des
+# bumps PATCH dans la meme ligne majeure, donc compatibles semantiquement.
+# Verifie par pnpm build + lint + tsc apres application.
+# A retirer des que les parents (ESLint, Babel, Tailwind) auront bumpe eux-memes.
+overrides:
+  '@babel/core': '>=7.29.6'
+  'brace-expansion@2': '>=2.1.2'
+  js-yaml: '>=4.3.1'
+  picomatch: '>=2.3.2'
+  'minimatch@3': '>=3.1.4'
+  flatted: '>=3.4.2'

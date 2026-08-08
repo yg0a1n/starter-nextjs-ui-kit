@@ -1,0 +1,12 @@
+// Extensions proposees a l'ouverture du depot. Elles correspondent aux outils
+// reellement configures ici : Prettier est le formateur declare dans
+// settings.json, ESLint tourne en CI, Tailwind alimente l'autocompletion des
+// classes. Sans elles, `editor.formatOnSave` ne trouve pas son formateur.
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}

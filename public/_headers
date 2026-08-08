@@ -1,0 +1,9 @@
+# Headers for Netlify deployment
+/og-image.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers for Vercel deployment (vercel.json will override this)
+/*.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable

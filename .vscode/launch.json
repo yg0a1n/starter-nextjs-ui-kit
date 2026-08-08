@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Debogue le code serveur : Server Components, route handlers, middleware.
+      // Utilise dev:webpack — l'inspecteur Node s'attache de facon fiable a
+      // Webpack, la ou Turbopack peut ne pas exposer les sources de la meme maniere.
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev:webpack"
+    },
+    {
+      // Serveur + navigateur dans une seule session : VS Code attend que le
+      // serveur annonce son URL, puis attache Chrome dessus. Les points d'arret
+      // fonctionnent des deux cotes.
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "webRoot": "${workspaceFolder}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+// Reglages de projet : ce qui garantit que deux contributeurs produisent le
+// meme diff. Pas de preferences personnelles ici — elles s'imposeraient a tous
+// ceux qui clonent ce starter.
+{
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // Prettier formate, ESLint corrige. Le tri des imports appartient a Prettier
+  // (@trivago/prettier-plugin-sort-imports) : ne pas activer
+  // `source.organizeImports`, les deux se contrediraient a chaque sauvegarde.
+  "prettier.requireConfig": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.addMissingImports.ts": "always"
+  },
+
+  "npm.packageManager": "pnpm",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
+}

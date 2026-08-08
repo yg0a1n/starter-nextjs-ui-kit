@@ -1,0 +1,41 @@
+// Essayer le starter sans rien installer : ouvrir dans un GitHub Codespace ou
+// un Dev Container, et obtenir l'application en marche.
+// https://aka.ms/devcontainer.json
+{
+  "name": "starter-nextjs-ui-kit",
+
+  // Image pre-construite Microsoft. Node 22, aligne sur .nvmrc et sur Vercel.
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+  // corepack active la version de pnpm declaree dans `packageManager`.
+  "postCreateCommand": "corepack enable && pnpm install --frozen-lockfile",
+
+  // Lance au rattachement : la creation du conteneur se termine au lieu de
+  // rester bloquee sur le serveur de dev.
+  "postAttachCommand": "pnpm dev",
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js dev server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "node",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+name: CI/CD - Build and Push Docker Image
+
+# Publie l'image sur GitHub Container Registry (ghcr.io), comme declare dans
+# le `[registry]` de fly.toml. Aucun secret a configurer : ghcr.io s'authentifie
+# avec GITHUB_TOKEN, fourni par GitHub Actions a chaque run.
+#
+# Ce workflow ne deploie pas : le bloc `flyctl deploy` en fin de fichier est
+# commente. Il publie une image.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+
+    # `permissions` remplace le jeu par defaut : `contents` doit etre re-declare,
+    # sinon actions/checkout ne peut plus cloner.
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Clear space to remove unused folders
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc "/usr/local/share/boost" "$AGENT_TOOLSDIRECTORY"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Nom d'image en minuscules : ghcr.io refuse les majuscules.
+      # NEXT_PUBLIC_APP_URL a un repli : src/env.ts la valide en `z.string().url()`
+      # et le build echoue si elle est vide. Definir la variable de depot du meme
+      # nom pour la surcharger — elle part dans le sitemap et les canonicals.
+      - name: Set environment variables
+        run: |
+          echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_APP_URL=${{ vars.NEXT_PUBLIC_APP_URL || 'https://starter-nextjs-ui-kit.vercel.app' }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile.bun
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:latest
+            ${{ env.IMAGE }}:${{ github.sha }}
+          build-args: |
+            NEXT_PUBLIC_APP_URL=${{ env.NEXT_PUBLIC_APP_URL }}
+            NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+
+      # - name: Install Flyctl
+      #   run: |
+      #     curl -L https://fly.io/install.sh | sh
+      #     echo "$HOME/.fly/bin" >> $GITHUB_PATH
+
+      # - name: Deploy to Fly.io
+      #   env:
+      #     FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      #   run: |
+      #     flyctl deploy --image ${{ env.IMAGE }}:latest --app starter-nextjs-ui-kit
