@@ -3,12 +3,12 @@
 #
 # Le package est public : aucun credential de registre n'est necessaire.
 #
-#   fly apps create starter-nextjs-ui-kit --org personal
-#   fly deploy --image ghcr.io/yg0a1n/starter-nextjs-ui-kit:latest
+#   fly apps create nextjs-production-starter --org personal
+#   fly deploy --image ghcr.io/yg0a1n/nextjs-production-starter:latest
 #
 # https://fly.io/docs/reference/configuration/
 
-app = 'yg0a1n-starter-nextjs-ui-kit'
+app = 'yg0a1n-nextjs-production-starter'
 primary_region = 'cdg'
 
 # Next.js s'arrete proprement sur SIGTERM. Avec SIGINT, les connexions en cours
@@ -20,7 +20,7 @@ kill_timeout = '30s'
   auto_rollback = true
 
 [build]
-  image = 'ghcr.io/yg0a1n/starter-nextjs-ui-kit:latest'
+  image = 'ghcr.io/yg0a1n/nextjs-production-starter:latest'
 
 [env]
   NODE_ENV = 'production'

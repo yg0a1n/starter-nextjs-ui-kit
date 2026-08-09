@@ -2,7 +2,7 @@
 // un Dev Container, et obtenir l'application en marche.
 // https://aka.ms/devcontainer.json
 {
-  "name": "starter-nextjs-ui-kit",
+  "name": "nextjs-production-starter",
 
   // Image pre-construite Microsoft. Node 22, aligne sur .nvmrc et sur Vercel.
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",

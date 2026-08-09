@@ -8,7 +8,7 @@ export const COPYRIGHT_FULL_YEAR = 2026;
 export const AUTHOR_NAME = 'yg0a1n';
 export const COMPANY_NAME = 'Flexiweb Evo';
 export const AUTHOR_WEBSITE_URL = 'https://www.flexiweb-evo.eu/';
-export const GITHUB_REPO_NAME = 'starter-nextjs-ui-kit';
+export const GITHUB_REPO_NAME = 'nextjs-production-starter';
 export const GITHUB_REPO = `${AUTHOR_NAME}/${GITHUB_REPO_NAME}`;
 export const SOURCE_CODE_URL = `https://github.com/${GITHUB_REPO}`;
 
