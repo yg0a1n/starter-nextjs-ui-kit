@@ -49,7 +49,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_APP_URL=${{ vars.NEXT_PUBLIC_APP_URL || 'https://starter-nextjs-ui-kit.vercel.app' }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_APP_URL=${{ vars.NEXT_PUBLIC_APP_URL || 'https://nextjs-production-starter.vercel.app' }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
 
       - name: Build and push Docker image

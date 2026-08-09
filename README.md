@@ -4,8 +4,8 @@ A Next.js 16 starting point that already answers the questions you would otherwi
 answer on day three: two languages, cookie consent wired before analytics, SEO metadata
 and JSON-LD derived from config, a quality gate in CI, and a production container image.
 
-**Live demo → [starter-nextjs-ui-kit.vercel.app](https://starter-nextjs-ui-kit.vercel.app)**
-· The [about page](https://starter-nextjs-ui-kit.vercel.app/about) reads exact versions
+**Live demo → [nextjs-production-starter.vercel.app](https://nextjs-production-starter.vercel.app)**
+· The [about page](https://nextjs-production-starter.vercel.app/about) reads exact versions
 from `package.json` at build time, so they cannot go stale.
 
 ---
